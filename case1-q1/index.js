@@ -21,3 +21,17 @@ document.body.addEventListener("click", (e) => {
     elem.classList.remove("open");
   });
 });
+
+//제이쿼리
+const $items = $(".wrapper .item");
+
+$("body").on("click", (e) => {
+  const target = $(e.target);
+  //선택한 요소에서 주어진 선택자가 있는지 판별합니다.
+  if (target.is(".item")) {
+    //오픈을 토글하고 형제들은 오픈 클래스를 제거한다.
+    target.toggleClass("open").siblings().removeClass("open");
+  } else if (!!!target.is(".context")) {
+    $items.removeClass("open");
+  }
+});
